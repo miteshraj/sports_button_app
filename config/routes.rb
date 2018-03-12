@@ -4,5 +4,5 @@ Rails.application.routes.draw do
   get "/teams" => "teams#index"
   get "/teams/:id" => "teams#show"
   post "/users" => "users#create"
-  get "/users/:id" => "users#show"
+  get "/users" => "users#index"
 end
