@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,6 +7,7 @@
   <script src="https://unpkg.com/vue/dist/vue.js"></script>
   <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
   <script src="https://unpkg.com/axios/dist/axios.js"></script>
+  <script src="https://api.fantasydata.net/v3/nba/scores/JSON/GamesByDate/2018-MAR-14?key=e04aba8cea684b27a5e404d38c8f8401"></script>
   <script src="index.js" defer></script>
 </head>
 <body>
@@ -30,15 +32,6 @@
 
 <template id="signup-page">
   <div class="vue-component">
-
-
-  <style>
-    .btn-primary {
-      background-color: #f44336;
-
-    }
-
-  </style>
     <div class="container">
       <h1>Signup</h1>
       <ul>
@@ -60,6 +53,10 @@
         <label>Password confirmation:</label>
         <input type="password" class="form-control" v-model="passwordConfirmation">
       </div>
+      <div class="form-group">
+        <label>Favorite Team (2-3 letter abbreviation) </label>
+        <input type="Favorite Team" v-model="favoriteTeam">
+      </div>
       <button class="btn btn-primary" v-on:click="submit()">Submit</button>
     </div>
 
@@ -71,6 +68,8 @@
   <a href="/#/signup">Signup</a>
   <a href="/#/login">Login</a>
   <a href="/#/logout">Logout</a>
+  <a href="/#/gamespage">Games</a>
+  <a href="/#/userpage">UserPage</a>
   <router-view></router-view>
 </div>
 
@@ -94,7 +93,38 @@
       <button class="btn btn-primary" v-on:click="submit()">Submit</button>
     </div>
 
+</template>
+
+ <template id="games-page">
+  <div class="vue-component">
+  <div class="container">
+    <h1>The Given Date's Games:</h1>
+    <h3> Note: All times are in Eastern Standard Time </h3>
+    <h
+    <ul>
+      <li v-for="game in games"> {{ game.AwayTeam }} vs.  
+        {{ game.HomeTeam }} -- Game Date & Start Time: {{ game.DateTime }} -- Channel: {{ game.Channel }} -- Current Score: {{ game.AwayTeamScore }} - {{game.HomeTeamScore}} -- Game Status: {{ game.Status }} -- Point Spread: {{ game.PointSpread}}
+
+      </li>
+
+    </ul>
+  </div>
+</div>
+
+</template>
+
   </div>
 
+
+
+<template id="user-page">
+<div class="vue-component">
+  <div class="container">
+    <h1> Your Profile: </h1>
+    <li v-for="user in user_info"> Email: {{ user[1].email }} </li>
+
+</div>
+</div>
+</template>
 
 

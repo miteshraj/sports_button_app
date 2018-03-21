@@ -24,7 +24,7 @@ var SignupPage = {
       name: "",
       email: "",
       password: "",
-      passwordConfirmation: "",
+      passwordConfirmation: "", 
       errors: []
     };
   },
@@ -34,7 +34,8 @@ var SignupPage = {
         name: this.name,
         email: this.email,
         password: this.password,
-        password_confirmation: this.passwordConfirmation
+        password_confirmation: this.passwordConfirmation,
+        favorite_team: this.favoriteTeam
       };
       axios
         .post("/users", params)
@@ -93,6 +94,56 @@ var LogoutPage = {
 };
 
 
+var GamesPage = {
+  template: "#games-page",
+  data: function() {
+    return {
+      games: []
+    };
+  },
+  created: function() {
+    axios.get("/teams").then(function(response) {
+      this.games = response.data;
+    }.bind(this));
+  },
+  methods: {
+    showGames: function(date) {
+      axios.get("/teams").then(function(response) {
+        var team = this.team[0]
+        return team.name
+      })
+
+    }
+  },
+  computed: {}
+};
+
+
+
+var UserPage = {
+  template: "#user-page",
+  data: function() {
+    return {
+      user_info: []
+    };
+  },
+  created: function() {
+    axios.get("/users").then(function(response) {
+      this.user_info = response.data;
+    }.bind(this));
+  },
+  methods: {
+    showGames: function(date) {
+      axios.get("/user").then(function(response) {
+        var team = this.team[0]
+        return team.name
+      })
+
+    }
+  },
+  computed: {}
+};
+
 
 
 
@@ -101,7 +152,9 @@ var router = new VueRouter({
   { path: "/", component: HomePage },
   { path: "/signup", component: SignupPage },
   { path: "/login", component: LoginPage },
-  { path: "/logout", component: LogoutPage }
+  { path: "/logout", component: LogoutPage },
+  { path: "/gamespage", component: GamesPage },
+  { path: "/userpage", component: UserPage }
   ],
   scrollBehavior: function(to, from, savedPosition) {
     return { x: 0, y: 0 };
@@ -118,6 +171,4 @@ var app = new Vue({
     }
   }
 });
-
-
 

@@ -5,7 +5,7 @@ class TeamsController < ApplicationController
 	#end
 
 	def index
-	  response = Unirest.get("https://api.fantasydata.net/v3/nba/scores/JSON/GamesByDate/2018-MAR-14?key=e04aba8cea684b27a5e404d38c8f8401")
+	  response = Unirest.get("https://api.fantasydata.net/v3/nba/scores/JSON/GamesByDate/2018-MAR-20?key=e04aba8cea684b27a5e404d38c8f8401")
 	  render json: response.body
 	end
 
