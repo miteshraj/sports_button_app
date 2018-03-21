@@ -59,7 +59,8 @@
       </div>
       <button class="btn btn-primary" v-on:click="submit()">Submit</button>
     </div>
-
+      <h3> Please use the team abbreviations below: </h3>
+        <h5>Team Abbreviations: Atlanta Hawks: ATL, Boston Celtics: BOS, Brooklyn Nets: BKN, Charlotte Hornets: CHA, Chicago Bulls: CHI, Cleveland Cavaliers: CLE, Dallas Mavericks: DAL, Denver Nuggets: DEN, Detroit Pistons: DET, Golden State Warriors: GS, Houston Rockets: HOU, Indiana Pacers: IND, Los Angeles Clippers: LAC, Los Angeles Lakers: LAL, Memphis Grizzlies: MEM, Miami Heat: MIA, Milwaukee Bucks: MIL, Minnesota Timberwolves: MIN, New Orleans Pelicans: NO, New York Knicks: NY, Oklahoma City Thunder: OKC, Orlando Magic: ORL, Philadelphia 76ers: PHI, Phoenix Suns: PHO, Portland Trail Blazers: POR, Sacramento Kings: SAC, San Antonio Spurs: SA, Toronto Raptors: TOR, Utah Jazz: UTA, Washington Wizards: WAS </h5>
   </div>
 </template>
 
@@ -70,6 +71,7 @@
   <a href="/#/logout">Logout</a>
   <a href="/#/gamespage">Games</a>
   <a href="/#/userpage">UserPage</a>
+  <a href="/#/userteam">UserTeam</a>
   <router-view></router-view>
 </div>
 
@@ -121,10 +123,18 @@
 <div class="vue-component">
   <div class="container">
     <h1> Your Profile: </h1>
-    <li v-for="user in user_info"> Email: {{ user[1].email }} </li>
+    <li v-for="user in user_info"> <h3>Email: {{ user[8].email }} </h3>   <h3>Favorite Team: {{ user[8].favorite_team}} </h3> </li>
 
 </div>
 </div>
 </template>
 
 
+<template id="user-team">
+  <div class="vue-component">
+    <div class="container">
+      <h2> Your Teams Game: </h2>
+      <li v-for="game in games" v-on:click="showGames(game)"> {{ game.AwayTeam }} 
+  </div>
+</div>
+</template>

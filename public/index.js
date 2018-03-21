@@ -134,9 +134,30 @@ var UserPage = {
   },
   methods: {
     showGames: function(date) {
-      axios.get("/user").then(function(response) {
-        var team = this.team[0]
-        return team.name
+ 
+      }
+  },
+  computed: {}
+};
+
+
+var UserTeam = {
+  template: "#user-team",
+  data: function() {
+    return {
+      games: []
+    };
+  },
+  created: function() {
+    axios.get("/teams").then(function(response) {
+      this.games = response.data;
+    }.bind(this));
+  },
+  methods: {
+    showGames: function(date) {
+      axios.get("/#/userpage").then(function(response) {
+        var team = this.favorite_team
+        console.log(team)
       })
 
     }
@@ -154,7 +175,8 @@ var router = new VueRouter({
   { path: "/login", component: LoginPage },
   { path: "/logout", component: LogoutPage },
   { path: "/gamespage", component: GamesPage },
-  { path: "/userpage", component: UserPage }
+  { path: "/userpage", component: UserPage },
+  { path: "/userteam", component: UserTeam }
   ],
   scrollBehavior: function(to, from, savedPosition) {
     return { x: 0, y: 0 };
