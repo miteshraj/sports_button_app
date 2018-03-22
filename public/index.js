@@ -154,16 +154,26 @@ var UserTeam = {
     }.bind(this));
   },
   methods: {
-    showGames: function(date) {
-      axios.get("/#/userpage").then(function(response) {
-        var team = this.favorite_team
-        console.log(team)
-      })
-
+    showGames: function() {
+      for (var i = 0; i < this.games.length; i++) {
+        if (this.games[i].AwayTeam === "DEN" || this.games[i].HomeTeam === "DEN") {
+          return this.games[i].AwayTeam;
+        }
+      }
+    },
+    otherTeam: function() {
+      for (var i = 0; i < this.games.length; i++) {
+        if (this.games[i].AwayTeam === "DEN" || this.games[i].HomeTeam === "DEN") {
+          return this.games[i].HomeTeam + " on channel: " + this.games[i].Channel + " at " +
+          this.games[i].DateTime + "  score: " + this.games[i].AwayTeamScore + " - " + this.games[i].HomeTeamScore 
+          + " in quarter: " + this.games[i].quarter
+        }
+      }
     }
   },
   computed: {}
 };
+
 
 
 

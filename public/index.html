@@ -133,8 +133,14 @@
 <template id="user-team">
   <div class="vue-component">
     <div class="container">
-      <h2> Your Teams Game: </h2>
-      <li v-for="game in games" v-on:click="showGames(game)"> {{ game.AwayTeam }} 
-  </div>
+      <h1> Your Teams Game: </h1>
+      <h2> {{ showGames() }} vs. {{ otherTeam() }}</h2>
+  
+
+      
+
+
+</div>
+
 </div>
 </template>
