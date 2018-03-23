@@ -4,7 +4,7 @@ var HomePage = {
   template: "#home-page",
   data: function() {
     return {
-      message: "Welcome to the Sports Button App!"
+      message: "Welcome to the Game Finder App!"
     };
   },
   created: function() {
@@ -107,13 +107,6 @@ var GamesPage = {
     }.bind(this));
   },
   methods: {
-    showGames: function(date) {
-      axios.get("/teams").then(function(response) {
-        var team = this.team[0]
-        return team.name
-      })
-
-    }
   },
   computed: {}
 };
@@ -156,14 +149,14 @@ var UserTeam = {
   methods: {
     showGames: function() {
       for (var i = 0; i < this.games.length; i++) {
-        if (this.games[i].AwayTeam === "DEN" || this.games[i].HomeTeam === "DEN") {
+        if (this.games[i].AwayTeam === "GS" || this.games[i].HomeTeam === "GS") {
           return this.games[i].AwayTeam;
         }
       }
     },
     otherTeam: function() {
       for (var i = 0; i < this.games.length; i++) {
-        if (this.games[i].AwayTeam === "DEN" || this.games[i].HomeTeam === "DEN") {
+        if (this.games[i].AwayTeam === "GS" || this.games[i].HomeTeam === "GS") {
           return this.games[i].HomeTeam + " on channel: " + this.games[i].Channel + " at " +
           this.games[i].DateTime + "  score: " + this.games[i].AwayTeamScore + " - " + this.games[i].HomeTeamScore 
           + " in quarter: " + this.games[i].quarter

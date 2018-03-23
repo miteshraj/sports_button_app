@@ -21,11 +21,11 @@
 
 <template id="home-page">
   <div class="vue-component">
-
     <h1>{{ message }}</h1>
-    <h2>Please select an option:</h2>
+    <h2>Please select an option:</h2> 
 
   </div>
+
 </template>
 
 
@@ -61,6 +61,7 @@
     </div>
       <h3> Please use the team abbreviations below: </h3>
         <h5>Team Abbreviations: Atlanta Hawks: ATL, Boston Celtics: BOS, Brooklyn Nets: BKN, Charlotte Hornets: CHA, Chicago Bulls: CHI, Cleveland Cavaliers: CLE, Dallas Mavericks: DAL, Denver Nuggets: DEN, Detroit Pistons: DET, Golden State Warriors: GS, Houston Rockets: HOU, Indiana Pacers: IND, Los Angeles Clippers: LAC, Los Angeles Lakers: LAL, Memphis Grizzlies: MEM, Miami Heat: MIA, Milwaukee Bucks: MIL, Minnesota Timberwolves: MIN, New Orleans Pelicans: NO, New York Knicks: NY, Oklahoma City Thunder: OKC, Orlando Magic: ORL, Philadelphia 76ers: PHI, Phoenix Suns: PHO, Portland Trail Blazers: POR, Sacramento Kings: SAC, San Antonio Spurs: SA, Toronto Raptors: TOR, Utah Jazz: UTA, Washington Wizards: WAS </h5>
+           <img src="https://images-na.ssl-images-amazon.com/images/I/71a9kMTscML._SY450_.jpg">
   </div>
 </template>
 
@@ -100,47 +101,38 @@
  <template id="games-page">
   <div class="vue-component">
   <div class="container">
-    <h1>The Given Date's Games:</h1>
+    <h1>Today's Games with live updates for 3/29/18:</h1>
     <h3> Note: All times are in Eastern Standard Time </h3>
     <h
     <ul>
       <li v-for="game in games"> {{ game.AwayTeam }} vs.  
-        {{ game.HomeTeam }} -- Game Date & Start Time: {{ game.DateTime }} -- Channel: {{ game.Channel }} -- Current Score: {{ game.AwayTeamScore }} - {{game.HomeTeamScore}} -- Game Status: {{ game.Status }} -- Point Spread: {{ game.PointSpread}}
-
+        {{ game.HomeTeam }} -- Game Date & Start Time: {{ game.DateTime }} -- Channel: {{ game.Channel }} -- Current Score: {{ game.AwayTeamScore }} - {{game.HomeTeamScore}} -- Game Status: {{ game.Status }} -- Quarter: {{ game.Quarter }} -- Point Spread: {{ game.PointSpread}}
       </li>
-
     </ul>
+      <img src="https://images-na.ssl-images-amazon.com/images/I/71a9kMTscML._SY450_.jpg">
   </div>
 </div>
-
 </template>
-
   </div>
-
-
 
 <template id="user-page">
 <div class="vue-component">
   <div class="container">
     <h1> Your Profile: </h1>
-    <li v-for="user in user_info"> <h3>Email: {{ user[8].email }} </h3>   <h3>Favorite Team: {{ user[8].favorite_team}} </h3> </li>
-
+    <li v-for="user in user_info"> <h3>Email: {{ user[10].email }} </h3>   <h3>Favorite Team: {{ user[10].favorite_team}} </h3> </li>
 </div>
 </div>
 </template>
 
 
 <template id="user-team">
+
   <div class="vue-component">
     <div class="container">
       <h1> Your Teams Game: </h1>
       <h2> {{ showGames() }} vs. {{ otherTeam() }}</h2>
-  
-
-      
-
-
+        <img src="https://images-na.ssl-images-amazon.com/images/I/71a9kMTscML._SY450_.jpg">
+</div>
 </div>
 
-</div>
 </template>
