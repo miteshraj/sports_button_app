@@ -2,31 +2,127 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
   <title>Sports Button App</title>
-  <script src="https://unpkg.com/vue/dist/vue.js"></script>
-  <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
-  <script src="https://unpkg.com/axios/dist/axios.js"></script>
-  <script src="https://api.fantasydata.net/v3/nba/scores/JSON/GamesByDate/2018-MAR-14?key=e04aba8cea684b27a5e404d38c8f8401"></script>
-  <script src="index.js" defer></script>
+
+
+  <!--bootstrap3 css-->
+  <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <!--ion icon fonts css-->
+  <link href="icons/css/ionicons.css" rel="stylesheet">
+  <!--custom css-->
+  <link href="css/style.css" rel="stylesheet" type="text/css">
+   <!--animate css-->
+  <link href="css/animate.css" rel="stylesheet" type="text/css">
+  <!--google font-->
+  <link href='https://fonts.googleapis.com/css?family=Arimo:400,400italic,700' rel='stylesheet' type='text/css'>
+  <!--flex slider css-->
+  <link href="css/flexslider.css" rel="stylesheet">
+  <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+  <![endif]-->
 </head>
-<body>
-  <div id="vue-app">
 
-    <router-view></router-view>
+  <body>
+    <div id="vue-app">
+      <div class="navbar navbar-inverse navbar-static-top" role="navigation">
+          <div class="container">
 
-  </div>
-</body>
+              <div class="navbar-header">
+                <div class="vue-component">
+                </div>
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                  </button>
+              </div>
+              <div class="navbar-collapse collapse">
+
+                  <ul class="nav navbar-nav navbar-right">
+                      <li class="dropdown">
+                          <a href="/#/" class="dropdown-toggle js-activated" >Home </a>
+                      </li>
+                      <li class=" dropdown">
+                          <a href="/#/signup" class="dropdown-toggle js-activated" data-toggle="dropdown">Sign-Up</a>
+                      </li>
+                      <li class="dropdown">
+                          <a href="/#/login" class="dropdown-toggle js-activated" data-toggle="dropdown">Login</a>
+                      </li>
+                      <li class=" dropdown">
+                          <a href="/#/gamespage" class="dropdown-toggle js-activated" data-toggle="dropdown">Games</a>
+                      </li>
+                      <li class="dropdown">
+                        <a href="/#/userpage" class="dropdown-toggle js-activated" >User Page</a>
+                      </li>
+                      <li class="dropdown">
+                        <a href="/#/userteam" class="dropdown-toggle js-activated" >User Team</a>
+                      </li>
+                      <li class="dropdown">
+                        <a href="/#/logout" class="dropdown-toggle js-activated" >Logout</a>
+                      </li>
+                  </ul>
+              </div><!--/.nav-collapse -->
+          </div><!--/.container-->
+      </div><!--navigation end-->
+      <div class="container">
+        <router-view></router-view>
+      </div>
+    </div>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.js"></script>
+    <script src="https://api.fantasydata.net/v3/nba/scores/JSON/GamesByDate/2018-MAR-14?key=e04aba8cea684b27a5e404d38c8f8401"></script>
+    <script src="index.js" defer></script>
+  </body>
+
+
+ 
 </html>
+
+
 
 <template id="home-page">
   <div class="vue-component">
     <h1>{{ message }}</h1>
-    <h2>Please select an option:</h2> 
-
+    <!--main flex slider start-->
+    <section id="main-slider-bg">
+        <div class="slider-overlay">
+            <div class="slider-main">
+                <div class="container text-center">
+                    <ul class="slides">
+                        <li>
+                            <h1 class="slider-heading">Game Finder App!</h1>
+                            <p class="slider-desc">Find live games with up to the second score changes along with many other features!</p>
+                            <a href="/#/login" class="btn btn-lg btn-white">Login!</a>
+                        </li>
+                        <li>
+                            <h1 class="slider-heading"></h1>
+                            <p class="slider-desc"></p>
+                            <a href="/#/signup" class="btn btn-lg btn-white">Get Started!</a>
+                        </li>
+                        <li>
+                            <h1 class="slider-heading">Clean Modern Multipurpose</h1>
+                            <p class="slider-desc">Miron is a multipurpose theme that you can use for your business Portfolio or blog.</p>
+                            <a href="#" class="btn btn-lg btn-white">take a tour</a>
+                        </li>
+                        <li>
+                            <h1 class="slider-heading">100% Responsive Design</h1>
+                            <p class="slider-desc">Miron is a fully responsive layout built with html5 and css3 </p>
+                            <a href="contact.html" class="btn btn-white btn-lg">Contact us</a>
+                        </li>
+                    </ul>
+                </div> <!-- /container -->
+            </div><!--slider main-->
+        </div><!--slider overlay-->
+    </section>
+    <!--main flex slider end-->
   </div>
-
 </template>
+
+
 
 
 
@@ -64,17 +160,6 @@
            <img src="https://images-na.ssl-images-amazon.com/images/I/71a9kMTscML._SY450_.jpg">
   </div>
 </template>
-
-
-<div id="vue-app">
-  <a href="/#/signup">Signup</a>
-  <a href="/#/login">Login</a>
-  <a href="/#/logout">Logout</a>
-  <a href="/#/gamespage">Games</a>
-  <a href="/#/userpage">UserPage</a>
-  <a href="/#/userteam">UserTeam</a>
-  <router-view></router-view>
-</div>
 
 
 <template id="login-page">
