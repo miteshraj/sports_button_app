@@ -108,7 +108,7 @@ var GamesPage = {
   },
   methods: {
   },
-  computed: {}
+  computed: { }
 };
 
 
