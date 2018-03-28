@@ -157,18 +157,15 @@ var UserTeam = {
     otherTeam: function() {
       for (var i = 0; i < this.games.length; i++) {
         if (this.games[i].AwayTeam === "GS" || this.games[i].HomeTeam === "GS") {
-          return this.games[i].HomeTeam + " on channel: " + this.games[i].Channel + " at " +
+          return this.games[i].HomeTeam + " on channel: " + this.games[i].Channel + " on " +
           this.games[i].DateTime + "  score: " + this.games[i].AwayTeamScore + " - " + this.games[i].HomeTeamScore 
-          + " in quarter: " + this.games[i].quarter
+          + " in quarter: " + this.games[i].Quarter
         }
       }
     }
   },
   computed: {}
 };
-
-
-
 
 
 var router = new VueRouter({

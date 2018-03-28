@@ -43,7 +43,7 @@
 
                   <ul class="nav navbar-nav navbar-right">
                       <li class="dropdown">
-                          <a href="/#/" class="dropdown-toggle js-activated" >Home </a>
+                          <a href="/#/" class="dropdown-toggle js-activated" >Home</a>
                       </li>
                       <li class=" dropdown">
                           <a href="/#/signup" class="dropdown-toggle js-activated" data-toggle="dropdown">Sign-Up</a>
@@ -77,12 +77,8 @@
     <script src="https://api.fantasydata.net/v3/nba/scores/JSON/GamesByDate/2018-MAR-14?key=e04aba8cea684b27a5e404d38c8f8401"></script>
     <script src="index.js" defer></script>
   </body>
-
-
  
 </html>
-
-
 
 <template id="home-page">
   <div class="vue-component">
@@ -121,10 +117,6 @@
     <!--main flex slider end-->
   </div>
 </template>
-
-
-
-
 
 <template id="signup-page">
   <div class="vue-component">
@@ -190,9 +182,9 @@
     <h3> Note: All times reflect Eastern Standard Time </h3>
     <h
     <ul>
-      <li v-for="game in games"> {{ game.AwayTeam }} vs.  
+      <h6 v-for="game in games"> {{ game.AwayTeam }} vs.  
         {{ game.HomeTeam }} -- Game Date & Start Time: {{ game.DateTime }} -- Channel: {{ game.Channel }} -- Current Score: {{ game.AwayTeamScore }} - {{game.HomeTeamScore}} -- Game Status: {{ game.Status }} -- Quarter: {{ game.Quarter }} -- Point Spread: {{ game.PointSpread}}
-      </li>
+      </h6>
     </ul>
   </div>
     <img src="http://wallpaper-gallery.net/images/nba-team-wallpapers/nba-team-wallpapers-2.jpg">
@@ -204,13 +196,12 @@
 <div class="vue-component">
   <div class="container">
     <h1> Your Profile: </h1>
-    <li v-for="user in user_info"> <h3>Email: {{ user[10].email }} </h3>   <h3>Favorite Team: {{ user[10].favorite_team}} </h3> </li>
+    <li v-for="user in user_info"> <h2>Email: {{ user[10].email }} </h2>   <h2>Favorite Team: {{ user[10].favorite_team}} </h2> </li>
 </div>
 <img src="http://img.ssww.com/cs_srgb,q_90,w_540/v1501175904/56/01/SWW1095601.jpg">
 </div>
 
 </template>
-
 
 <template id="user-team">
 
