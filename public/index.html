@@ -95,7 +95,7 @@
                     <ul class="slides">
                         <li>
                             <h1 class="slider-heading">Game Finder App!</h1>
-                            <p class="slider-desc">Find live games with up to the second score changes along with many other features!</p>
+                            <p class="slider-desc">Find live games with up to the second score changes, channel information, time, Vegas point spreads and much more!</p>
                             <a href="/#/login" class="btn btn-lg btn-white">Login!</a>
                         </li>
                         <li>
@@ -157,7 +157,7 @@
     </div>
       <h3> Please use the team abbreviations below: </h3>
         <h5>Team Abbreviations: Atlanta Hawks: ATL, Boston Celtics: BOS, Brooklyn Nets: BKN, Charlotte Hornets: CHA, Chicago Bulls: CHI, Cleveland Cavaliers: CLE, Dallas Mavericks: DAL, Denver Nuggets: DEN, Detroit Pistons: DET, Golden State Warriors: GS, Houston Rockets: HOU, Indiana Pacers: IND, Los Angeles Clippers: LAC, Los Angeles Lakers: LAL, Memphis Grizzlies: MEM, Miami Heat: MIA, Milwaukee Bucks: MIL, Minnesota Timberwolves: MIN, New Orleans Pelicans: NO, New York Knicks: NY, Oklahoma City Thunder: OKC, Orlando Magic: ORL, Philadelphia 76ers: PHI, Phoenix Suns: PHO, Portland Trail Blazers: POR, Sacramento Kings: SAC, San Antonio Spurs: SA, Toronto Raptors: TOR, Utah Jazz: UTA, Washington Wizards: WAS </h5>
-           <img src="https://images-na.ssl-images-amazon.com/images/I/71a9kMTscML._SY450_.jpg">
+           <img src="http://wallpaper-gallery.net/images/nba-team-wallpapers/nba-team-wallpapers-2.jpg">
   </div>
 </template>
 
@@ -187,15 +187,15 @@
   <div class="vue-component">
   <div class="container">
     <h1>Today's Games with live updates for 3/29/18:</h1>
-    <h3> Note: All times are in Eastern Standard Time </h3>
+    <h3> Note: All times reflect Eastern Standard Time </h3>
     <h
     <ul>
       <li v-for="game in games"> {{ game.AwayTeam }} vs.  
         {{ game.HomeTeam }} -- Game Date & Start Time: {{ game.DateTime }} -- Channel: {{ game.Channel }} -- Current Score: {{ game.AwayTeamScore }} - {{game.HomeTeamScore}} -- Game Status: {{ game.Status }} -- Quarter: {{ game.Quarter }} -- Point Spread: {{ game.PointSpread}}
       </li>
     </ul>
-      <img src="https://images-na.ssl-images-amazon.com/images/I/71a9kMTscML._SY450_.jpg">
   </div>
+    <img src="http://wallpaper-gallery.net/images/nba-team-wallpapers/nba-team-wallpapers-2.jpg">
 </div>
 </template>
   </div>
@@ -206,7 +206,9 @@
     <h1> Your Profile: </h1>
     <li v-for="user in user_info"> <h3>Email: {{ user[10].email }} </h3>   <h3>Favorite Team: {{ user[10].favorite_team}} </h3> </li>
 </div>
+<img src="http://img.ssww.com/cs_srgb,q_90,w_540/v1501175904/56/01/SWW1095601.jpg">
 </div>
+
 </template>
 
 
@@ -216,7 +218,7 @@
     <div class="container">
       <h1> Your Teams Game: </h1>
       <h2> {{ showGames() }} vs. {{ otherTeam() }}</h2>
-        <img src="https://images-na.ssl-images-amazon.com/images/I/71a9kMTscML._SY450_.jpg">
+        <img src="https://cdn.vox-cdn.com/thumbor/uT7bwYR9adiOx3SB8ODiv8UUl0I=/0x0:2048x1522/920x613/filters:focal(861x598:1187x924):format(webp)/cdn.vox-cdn.com/uploads/chorus_image/image/57740791/DPgTtrhUMAA3Evy.0.jpg">
 </div>
 </div>
 
